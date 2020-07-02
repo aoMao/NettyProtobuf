@@ -1,0 +1,9 @@
+syntax = "proto3";
+option java_package = "netty.test.message.test";
+option java_outer_classname = "TestProto";
+option java_multiple_files = true;
+
+message Test1 {
+    int32 aaa = 1;
+    int64 bbb = 2;
+}

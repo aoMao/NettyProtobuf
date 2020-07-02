@@ -1,0 +1,41 @@
+syntax = "proto3";
+// 输出到哪个包中
+option java_package = "netty.test.message";
+// 输出文件名
+option java_outer_classname = "TestProto";
+// 是否每个message一个文件，默认为false
+option java_multiple_files = true;
+ 
+message Student {
+    int32 id = 1;
+    string name = 2;
+}
+
+enum EnumTest {
+    ZERO = 0;
+    ONE = 1;
+}
+
+message Test {
+    int64 id = 1;           // long类型
+    int32 sex = 2;          // int类型
+    string name = 3;        // 字符串类型
+    float floatTest = 4;    // float类型
+    double doubleTest = 5;  // double类型
+    Student stu = 6;        // 自定义类型
+    EnumTest enu = 7;       // 枚举类型
+    bool flag = 9;          // boolean类型
+    bytes bs = 10;          // byteString类型
+}
+
+message Test2 {
+    int64 id = 1;           // long类型
+    int32 sex = 2;          // int类型
+    string name = 3;        // 字符串类型
+    float floatTest = 4;    // float类型
+    double doubleTest = 5;  // double类型
+    Student stu = 6;        // 自定义类型
+    EnumTest enu = 7;       // 枚举类型
+    bool flag = 9;          // boolean类型
+    bytes bs = 10;          // byteString类型
+}

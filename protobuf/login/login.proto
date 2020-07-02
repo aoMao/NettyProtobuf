@@ -1,0 +1,25 @@
+syntax = "proto3";
+option java_package = "netty.test.message.login";
+option java_outer_classname = "LoginProto";
+
+// 登录请求
+message LoginReq {
+    int64 id = 1;           // id，非必须项，如果有则使用老数据，没有新建用户
+    string code = 2;        // 登录code，
+    string name = 3;        // 名称
+    int32 age = 4;          // 年龄
+}
+
+enum LoginResult {
+    SUCCESS = 0;
+    FAIL = 1;
+}
+
+// 登录回复
+message LoginResp {
+    LoginResult result = 1;             // 登录结果
+    int64 id = 2;                       // 用户id
+    string name = 3;                    // 用户昵称
+    int32 age = 4;                      // 年龄
+    repeated int64 loginTimes = 5;      // 登录时间列表
+}
